@@ -1,3 +1,4 @@
+import { right } from "@popperjs/core";
 import "../style/index.css";
 
 /**
@@ -29,7 +30,7 @@ function render(variables = {}) {
   let city = variables.city || "Ciudad";
   let country = variables.country || "País";
 
-  let smClass =
+  let socialMediaClass =
     variables.socialMediaPosition === "left"
       ? "position-left"
       : "position-right";
@@ -52,7 +53,7 @@ function render(variables = {}) {
           <h1>${name} ${lastName}</h1>
           <h2>${role}</h2>
           <h3>${city}, ${country}</h3>
-          <ul class="${smClass}">
+          <ul class="position-${variables.socialMediaPosition}">
             <li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/${variables.github}"><i class="fab fa-github"></i></a></li>
             <li><a href="https://linkedin.com/school/${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>
