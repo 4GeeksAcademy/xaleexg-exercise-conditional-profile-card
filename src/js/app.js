@@ -52,7 +52,7 @@ function render(variables = {}) {
           <h1>${name} ${lastName}</h1>
           <h2>${role}</h2>
           <h3>${city}, ${country}</h3>
-          <ul class="${socialMediaPosition}">
+          <ul class="${smClass}">
             <li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/${variables.github}"><i class="fab fa-github"></i></a></li>
             <li><a href="https://linkedin.com/school/${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>
