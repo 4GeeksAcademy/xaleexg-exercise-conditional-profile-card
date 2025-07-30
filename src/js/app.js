@@ -24,21 +24,29 @@ import "../style/index.css";
     }
  */
 function render(variables = {}) {
-  let name = variables.name || "Nombre, ";
-  let lastName = variables.lastName || "Apellido";
-  let role = variables.role || "Puesto";
-  let city = variables.city || "Ciudad";
-  let country = variables.country || "País";
+  let name = variables.name ? variables.name : "Nombre";
+  let lastName = variables.lastName ? variables.lastName : "Apellido";
+  let role = variables.role ? variables.role : "Puesto";
+  let city = variables.city ? variables.city : "Ciudad";
+  let country = variables.country ? variables.country : "País";
 
   let socialMediaClass =
     variables.socialMediaPosition === "left"
       ? "position-left"
       : "position-right";
 
-  let twitter = variables.twitter;
-  let github = variables.github;
-  let linkedin = variables.linkedin;
-  let instagram = variables.instagram;
+  let twitter = variables.twitter
+    ? `<li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter"></i></a></li>`
+    : "";
+  let github = variables.github
+    ? `<li><a href="https://github.com/${variables.github}"><i class="fab fa-github"></i></a></li>`
+    : "";
+  let linkedin = variables.linkedin
+    ? `<li><a href="https://linkedin.com/school/${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>`
+    : "";
+  let instagram = variables.instagram
+    ? `<li><a href="https://instagram.com/${variables.instagram}"><i class="fab fa-instagram"></i></a></li>`
+    : "";
 
   console.log("These are the current variables: ", variables); // print on the console
   // here we ask the logical questions to make decisions on how to build the html
@@ -54,10 +62,10 @@ function render(variables = {}) {
           <h2>${role}</h2>
           <h3>${city}, ${country}</h3>
           <ul class="position-${variables.socialMediaPosition}">
-            <li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/${variables.github}"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/school/${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/${variables.instagram}"><i class="fab fa-instagram"></i></a></li>
+            ${twitter}
+            ${github}
+             ${linkedin}
+            ${instagram}
           </ul>
         </div>
     `;
